@@ -15,8 +15,10 @@ submit.addEventListener('click',function(){
 	books.appendChild(row);
 	document.getElementById('book-list').addEventListener('click', function(e) {
 	    if (e.target.classList.contains('delete')) {
-	            const row = e.target.parentElement.parentElement;
-	            document.getElementById('book-list').removeChild(row);
+	            const row = e.target.closest('tr'); // Correctly find the closest row
+		        if (row) {
+		            row.remove(); // Directly remove the row
+		        }
 	    }
 	});
 });
