@@ -10,12 +10,12 @@ submit.addEventListener('click',function(){
 		<td>${title}</td>
 		<td>${author}</td>
 		<td>${isbn}</td>
-		<button class="delete">x</button>
+		<td><button class="delete">x</button><td>
 	`
 	books.appendChild(row);
 	document.getElementById('book-list').addEventListener('click', function(e) {
 	    if (e.target.classList.contains('delete')) {
-	            const row = e.target.parentElement;
+	            const row = e.target.parentElement.parentElement;
 	            document.getElementById('book-list').removeChild(row);
 	    }
 	});
