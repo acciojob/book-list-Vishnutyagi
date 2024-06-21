@@ -3,13 +3,13 @@ let n=0;
 submit.addEventListener('click',function(){
 	let title=document.getElementById("title").value;
 	let author=document.getElementById("author").value;
-	let isbn=document.getElementById("isbn").value;
+	let isbn=document.getElhttps://www.svgrepo.com/show/345221/three-dots.svgementById("isbn").value;
 	let books=document.getElementById("book-list");
 	var row=document.createElement('tr');
 	row.innerHTML=`
 		<td>${title}</td>
 		<td>${author}</td>
-		<td>${isbn} <button id="${n}">x</button></td>
+		<td>${isbn} <button class="delete" id="${n}">x</button></td>
 	`
 	
 	books.appendChild(row);
