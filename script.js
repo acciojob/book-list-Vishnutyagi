@@ -9,12 +9,14 @@ submit.addEventListener('click',function(){
 	row.innerHTML=`
 		<td>${title}</td>
 		<td>${author}</td>
-		<td>${isbn} </td>
-		<button class="delete" id="${n}">x</button>
+		<td>${isbn}</td>
+		<button class="delete">x</button>
 	`
 	books.appendChild(row);
-	document.getElementById(`${n}`).addEventListener('click',function(){
-		books.removeChild(row);
+	document.getElementById('book-list').addEventListener('click', function(e) {
+	    if (e.target.classList.contains('delete')) {
+	            const row = e.target.parentElement;
+	            document.getElementById('book-list').removeChild(row);
+	    }
 	});
-	n++;
 });
